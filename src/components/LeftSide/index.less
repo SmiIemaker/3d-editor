@@ -1,0 +1,83 @@
+.left-side {
+    position: fixed;
+    width: 250px;
+    left: 0;
+    top: @menuHeight;
+    bottom: 0;
+    margin: auto;
+    z-index: 3;
+    transition: all 300ms;
+    background: #ffffff;
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.25);
+
+    &.scene {
+        width: 400px;
+        &.hide {
+            left: -400px;
+        }
+    }
+    &.hide {
+        left: -250px;
+    }
+}
+.main {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    .remote {
+        margin-bottom: 16px;
+    }
+}
+
+.geometry {
+    font-size: 0;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #999999;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px;
+    width: 160px;
+    margin: auto;
+    .img {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .tip {
+        font-size: 12px;
+    }
+}
+
+.light {
+    .tip {
+        text-align: center;
+        width: 180px;
+        margin: 10px auto;
+        background: #999999;
+        border: solid 1px #666;
+        color: #666;
+    }
+}
+.toggle {
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0);
+    position: absolute;
+    color: #0084ff;
+    right: -30px;
+    font-size: 20px;
+    top: 10px;
+}
+
+/deep/.el-collapse-item__header {
+    padding-left: 20px;
+    color: #0084ff;
+}
+/deep/.el-button {
+    display: block;
+    width: 90%;
+    margin: 4px auto;
+}

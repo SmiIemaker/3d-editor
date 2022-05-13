@@ -1,0 +1,95 @@
+{
+  "geometry": [{
+      "name": "BoxGeometry",
+      "img": "asset/img/s1.jpg"
+    },
+    {
+
+      "name": "SphereGeometry",
+      "img": "asset/img/s2.jpg"
+    },
+    {
+      "name": "IcosahedronGeometry",
+      "img": "asset/img/s3.jpg"
+    },
+    {
+      "name": "CylinderGeometry",
+      "img": "asset/img/s4.jpg"
+    },
+    {
+      "name": "OctahedronGeometry",
+      "img": "asset/img/s5.jpg"
+    },
+    {
+      "name": "TorusGeometry",
+      "img": "asset/img/s6.jpg"
+    },
+    {
+      "name": "ConeGeometry",
+      "img": "asset/img/s7.jpg"
+    },
+    {
+      "name": "PlaneGeometry",
+      "img": "asset/img/s8.jpg"
+    }
+  ],
+  "bufferGeometry": [{
+      "name": "BoxBufferGeometry",
+      "img": "asset/img/s1.jpg"
+    },
+    {
+
+      "name": "SphereBufferGeometry",
+      "img": "asset/img/s2.jpg"
+    },
+    {
+      "name": "IcosahedronBufferGeometry",
+      "img": "asset/img/s3.jpg"
+    },
+    {
+      "name": "CylinderBufferGeometry",
+      "img": "asset/img/s4.jpg"
+    },
+    {
+      "name": "OctahedronBufferGeometry",
+      "img": "asset/img/s5.jpg"
+    },
+    {
+      "name": "TorusBufferGeometry",
+      "img": "asset/img/s6.jpg"
+    },
+    {
+      "name": "ConeBufferGeometry",
+      "img": "asset/img/s7.jpg"
+    },
+    {
+      "name": "PlaneBufferGeometry",
+      "img": "asset/img/s8.jpg"
+    }
+  ],
+  "light": [{
+      "name": "AmbientLight",
+      "label": "AmbientLight"
+    },
+    {
+      "name": "DirectionalLight",
+      "label": "DirectionalLight"
+    },
+    {
+      "name": "HemisphereLight",
+      "label": "HemisphereLight"
+    },
+    {
+      "name": "PointLight",
+      "label": "PointLight"
+    },
+    {
+      "name": "RectAreaLight",
+      "label": "RectAreaLight"
+    },
+    {
+      "name": "SpotLight",
+      "label": "SpotLight"
+    }
+  ]
+}
