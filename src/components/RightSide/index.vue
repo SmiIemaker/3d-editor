@@ -186,14 +186,6 @@ export default {
             GameEvent.ins.send(GameEvent.DELETE_ITEM);
             GameEvent.ins.send(GameEvent.GET_SCENE_TREE, null);
         },
-        handleMakeGroup() {
-            GameEvent.ins.send(GameEvent.MAKE_GROUP);
-            GameEvent.ins.send(GameEvent.GET_SCENE_TREE, null);
-        },
-        handleSplitGroup() {
-            GameEvent.ins.send(GameEvent.SPLIT_GROUP);
-            GameEvent.ins.send(GameEvent.GET_SCENE_TREE, null);
-        },
         handleCollapse(e) {
             console.log(e);
         },

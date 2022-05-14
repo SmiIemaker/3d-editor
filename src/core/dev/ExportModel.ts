@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import ModelTooler from "./ModelTooler";
-import { BlobTooler } from "../tool/BlobTooler";
 import GLTFTooler from "../tool/GLTFTooler";
 import CacheData from "./CacheData";
 

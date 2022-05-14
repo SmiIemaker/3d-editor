@@ -63,12 +63,6 @@ export default class Stage extends Vue {
             game.addLight(e.detail);
         });
 
-        GameEvent.ins.on(GameEvent.MAKE_GROUP, (e: CustomEvent) => {
-            game.makeGroup();
-        });
-        GameEvent.ins.on(GameEvent.SPLIT_GROUP, (e: CustomEvent) => {
-            game.splitGroup();
-        });
         // GameEvent.ins.on(GameEvent.CHANGE_IS_ROOT, (e:any) => {this.changeIsRoot(e)});
 
         GameEvent.ins.on(GameEvent.GET_SCENE_TREE, (e: CustomEvent) => {
@@ -80,16 +74,6 @@ export default class Stage extends Vue {
 
         GameEvent.ins.on(GameEvent.CHANGE_ITEM_NAME, (e: CustomEvent) => {
             game.changeItemName(e.detail);
-        });
-
-        GameEvent.ins.on(GameEvent.BSP_SUBTRACT, (e: CustomEvent) => {
-            game.bspSubtract();
-        });
-        GameEvent.ins.on(GameEvent.BSP_INTERSECT, (e: CustomEvent) => {
-            game.bspIntersect();
-        });
-        GameEvent.ins.on(GameEvent.BSP_UNION, (e: CustomEvent) => {
-            game.bspUnion();
         });
 
         GameEvent.ins.on(GameEvent.EXPORT_SCENE, (e: CustomEvent) => {
@@ -133,9 +117,7 @@ export default class Stage extends Vue {
             game.importFile(e.detail);
         });
 
-        GameEvent.ins.on(GameEvent.LOAD_ZIP, (e: CustomEvent) => {
-            game.loadServeZip(e.detail);
-        });
+
 
         GameEvent.ins.on(GameEvent.TOGGLE_VISIBLE, (e: CustomEvent) => {
             console.log(e.detail, "visible");

@@ -26,7 +26,7 @@ import GameEvent from "@/core/event/index";
 export default {
     data() {
         return {
-            progress: 30
+            
         };
     },
     components: {
@@ -40,9 +40,7 @@ export default {
         DragView
     },
     mounted() {
-        GameEvent.ins.on(GameEvent.LOADING, e => {
-            this.progress = e.detail;
-        });
+        
     }
 };
 </script>

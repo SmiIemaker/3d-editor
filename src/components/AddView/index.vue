@@ -79,7 +79,7 @@ export default class MenuView extends Vue {
   mounted() {
     (<any>this).$axios.get("asset/data.json").then((res: any) => {
       this.geometryList = res.data.geometry;
-      this.bufferGeometryList = res.data.bufferGeometry;
+      // this.bufferGeometryList = res.data.bufferGeometry;
       this.lightList = res.data.light;
     });
 
@@ -157,21 +157,21 @@ export default class MenuView extends Vue {
     window.addEventListener("mousemove", this.mouseMove);
     window.addEventListener("mouseup", this.mouseUp);
   }
-  addbufferGeometry(e: MouseEvent) {
-    let obj: any = e.currentTarget;
-    let item: any = this.bufferGeometryList[obj.dataset.idx];
-    console.log(e);
-    // this.$store.commit("changeDrag", item);
-    console.log(item, "-----item---");
-    this.$store.commit("changeDrag", item);
-    this.$store.commit("changeDragPosition", {
-      x: e.clientX,
-      y: e.clientY,
-    });
-    this.$store.commit("changeDragOffset", { x: e.offsetX, y: e.offsetY });
-    window.addEventListener("mousemove", this.mouseMove);
-    window.addEventListener("mouseup", this.mouseUp);
-  }
+  // addbufferGeometry(e: MouseEvent) {
+  //   let obj: any = e.currentTarget;
+  //   let item: any = this.bufferGeometryList[obj.dataset.idx];
+  //   console.log(e);
+  //   // this.$store.commit("changeDrag", item);
+  //   console.log(item, "-----item---");
+  //   this.$store.commit("changeDrag", item);
+  //   this.$store.commit("changeDragPosition", {
+  //     x: e.clientX,
+  //     y: e.clientY,
+  //   });
+  //   this.$store.commit("changeDragOffset", { x: e.offsetX, y: e.offsetY });
+  //   window.addEventListener("mousemove", this.mouseMove);
+  //   window.addEventListener("mouseup", this.mouseUp);
+  // }
   addLight(e: MouseEvent) {
     let obj: any = e.currentTarget;
     let item: any = this.lightList[obj.dataset.idx];

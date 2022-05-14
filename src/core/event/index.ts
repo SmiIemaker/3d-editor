@@ -6,9 +6,6 @@ export default class GameEvent {
     public static DELETE_ITEM: string = "delete item";
     public static COPY_ITEM: string = "copy item";
 
-    public static MAKE_GROUP: string = "make group";
-    public static SPLIT_GROUP: string = "split group";
-
     public static CHANGE_IS_ROOT: string = "change is root";
 
     public static CUSTOM_GEOMETRY: string = "custom geometry";
@@ -29,10 +26,6 @@ export default class GameEvent {
 
     public static CHANGE_ITEM_NAME: string = "change item name";
 
-    public static BSP_SUBTRACT: string = "bsp subtract";
-    public static BSP_INTERSECT: string = "bsp intersect";
-    public static BSP_UNION: string = "bsp union";
-
     public static EXPORT_SCENE: string = "export scene";
     public static LOAD_SCENE: string = "load scene";
     public static TOGGLE_STATS: string = "toggle stats";
@@ -51,7 +44,6 @@ export default class GameEvent {
 
     public static CHANGE_LEVEL: string = "change level";
     public static IMPORT_FILE: string = "import file";
-    public static LOAD_ZIP: string = "load zip";
     public static TOGGLE_VISIBLE: string = "toggle visible";
 
     public static PASTE_ITEM: string = "paste item";

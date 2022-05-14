@@ -2,7 +2,6 @@ import * as THREE from "three";
 import { TransformControls } from "three/examples/jsm/controls/TransformControls";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import SelectLine from "./SelectLine";
-import ComputeGeometry from "../tool/ComputeGeometry";
 import { Presenter } from "../history/Presenter";
 import { PositionCmd } from "../history/cmd/PositionCmd";
 
@@ -77,34 +76,6 @@ export default class SelectView extends THREE.Object3D {
             this.remove(this.transformControls);
         }
     }
-
-    bspSubtract(): THREE.Object3D | null {
-        let list = this.selectLine.getBSPObjects();
-        if (list) {
-            let m = ComputeGeometry.subtract(list[0], list[1]);
-            return m;
-        }
-        return null;
-    }
-
-    bspIntersect(): THREE.Object3D | null {
-        let list = this.selectLine.getBSPObjects();
-        if (list) {
-            let m = ComputeGeometry.intersect(list[0], list[1]);
-            return m;
-        }
-        return null;
-    }
-
-    bspUnion(): THREE.Object3D | null {
-        let list = this.selectLine.getBSPObjects();
-        if (list) {
-            let m = ComputeGeometry.union(list[0], list[1]);
-            return m;
-        }
-        return null;
-    }
-
     cancelSelected(): any {
         this.remove(this.transformControls);
         this.selectLine.clear();

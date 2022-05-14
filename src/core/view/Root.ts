@@ -4,7 +4,6 @@ import Factory from "../tool/Factory";
 import ColorTooler from "../tool/ColorTooler";
 import SelectView from "./SelectView";
 import FocusLight from "../light/FocusLight";
-import CustomGroup from "../dev/CustomGroup";
 import GLTFTooler from "../tool/GLTFTooler";
 
 export default class Root extends THREE.Object3D {
@@ -148,53 +147,6 @@ export default class Root extends THREE.Object3D {
         this.lights.children.forEach((item: any) => {
             item.update(this.camera);
         });
-    }
-
-    bspSubtract(): void {
-        let m = this.selectView.bspSubtract();
-        if (m) {
-            this.container.add(m);
-        }
-    }
-
-    bspIntersect(): void {
-        let m = this.selectView.bspIntersect();
-        if (m) {
-            this.container.add(m);
-        }
-    }
-
-    bspUnion(): void {
-        let m = this.selectView.bspUnion();
-        if (m) {
-            this.container.add(m);
-        }
-    }
-
-    makeGroup(): any {
-        let list = this.selectView.selectLine.getSelectItems();
-        if (list.length > 1) {
-            let customGroup = new CustomGroup();
-            list.forEach((item: any) => {
-                customGroup.push(item);
-            });
-            this.selectView.selectLine.clear();
-            this.addObject(customGroup);
-            return customGroup;
-        }
-        return null;
-    }
-
-    splitGroup(): any {
-        let list = this.selectView.selectLine.getSelectItems();
-        if (list.length == 1) {
-            let obj: any = list[0];
-            if (obj.name == "CustomGroup") {
-                obj.clear(this.container);
-                this.container.remove(obj);
-                this.selectView.cancelSelected();
-            }
-        }
     }
 
     set multiple(n: any) {

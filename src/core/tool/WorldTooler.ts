@@ -1,8 +1,7 @@
 import * as THREE from "three";
-// import * as ThreeMeshUI from "../view/three-mesh-ui.js";
 
-// const ThreeMeshUI = (window as any).ThreeMeshUI;
-// console.log("ThreeMeshUI", ThreeMeshUI);
+
+
 
 export default class WorldTooler {
     public static readonly size: number = 128;
@@ -47,20 +46,5 @@ export default class WorldTooler {
         // parent.add(txt);
     }
 
-    // public static getText(word: string) {
-    //     var container = new ThreeMeshUI.Block({
-    //         width: 1.2,
-    //         height: 0.7,
-    //         padding: 0.2,
-    //         fontFamily: "./assets/font/custom-msdf.json",
-    //         fontTexture: "./assets/font/custom.png"
-    //     });
 
-    //     const text = new ThreeMeshUI.Text({
-    //         content: word
-    //     });
-    //     container.add(text as any);
-    //     return container;
-    //     // return text;
-    // }
 }

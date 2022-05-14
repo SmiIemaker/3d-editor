@@ -8,10 +8,8 @@ import { LoadTooler } from "./tool/LoadTooler";
 import SelectTooler from "./tool/SelectTooler";
 import ListSceneTooler from "./tool/ListSceneTooler";
 import Root from "./view/Root";
-import ExportModel from "./dev/ExportModel";
 import { ExportTooler } from "./tool/ExportTooler";
 import Tooler from "./tool/Tooler";
-import { FineLoader } from "./tool/FineLoader";
 import { PositionTooler } from "./tool/PositionTooler";
 
 export default class Game {
@@ -490,8 +488,7 @@ export default class Game {
     }
 
     exportTest() {
-        // let e = new ExportModel();
-        // e.parse(this.root.container, "Good");
+
     }
 
     loadServeModel(url: string): void {
@@ -515,91 +512,6 @@ export default class Game {
             this.mixer = null as any;
         }
     }
-
-    /*
-    loadServeModel(url:string){
-        let loader = new GLTFLoader();
-        // loader.setPath('./asset/obj/');
-        loader.load(url, (gltf) => {
-            gltf.scene.traverse((child: any) => {
-                if (child.isMesh) {
-                    child.name = "load_mesh";
-                    child.material.roughness = 0.3;
-                    child.material.metalness = 0.1;
-                    child.updateMatrix();
-                }
-            })
-
-            let aim: any = gltf.scene;
-            Tooler.resize(aim, 20);
-            this.root.addObject(aim);
-            // this.scene.remove(this.loading);
-        }, (e: ProgressEvent) => {
-            console.log("ProgressEvent", e);
-            let n = Math.floor(e.loaded / e.total * 100);
-            console.log("load " + n + "%");
-            // this.loading.update(n + "%");
-            GameEvent.ins.send(GameEvent.LOADING, n);
-            // this.scene.add(this.loading);
-        })
-    }
-    */
-
-    startLoad(): void {
-        let loader = new GLTFLoader();
-        loader.setPath("/asset/obj/");
-        loader.load(
-            "win.gltf",
-            gltf => {
-                console.log("gltf");
-                console.log(gltf);
-                gltf.scene.traverse((child: any) => {
-                    if (child.isMesh) {
-                        child.name = "load_mesh";
-                        child.material.roughness = 0.3;
-                        child.material.metalness = 0.1;
-                        child.updateMatrix();
-                    }
-                });
-
-                let aim: any = gltf.scene.children[0].children[0].children[0];
-                let size = new THREE.Box3()
-                    .setFromObject(aim)
-                    .getSize(new THREE.Vector3());
-                let max = Math.max(size.x, size.y, size.z);
-                let scale = 10 / max;
-                aim.scale.set(scale, scale, scale);
-
-                aim.position.set(0, 0, 0);
-
-                let group = new THREE.Object3D();
-                group.add(aim);
-                group.rotateX(Math.PI / 2);
-
-                this.root.addObject(group);
-
-                group.name = "load_scene";
-
-                this.scene.remove(this.loading);
-            },
-            (e: ProgressEvent) => {
-                let n = Math.floor((e.loaded / e.total) * 100);
-                console.log("load " + n + "%");
-                this.loading.update(n + "%");
-                this.scene.add(this.loading);
-            }
-        );
-    }
-
-    makeGroup(): void {
-        let group = this.root.makeGroup();
-        this.selectObject(group);
-    }
-
-    splitGroup(): void {
-        this.root.splitGroup();
-    }
-
     animate(): void {
         requestAnimationFrame(() => {
             this.animate();
@@ -627,18 +539,6 @@ export default class Game {
         this.curMesh.name = name;
     }
 
-    bspSubtract(): void {
-        this.root.bspSubtract();
-    }
-
-    bspIntersect(): void {
-        this.root.bspIntersect();
-    }
-
-    bspUnion(): void {
-        this.root.bspUnion();
-    }
-
     importFile(file: any): void {
         console.log(file);
         let loadTooler = new LoadTooler();
@@ -648,19 +548,6 @@ export default class Game {
                 this.root.addObject(obj);
                 // this.checkPlay(obj);
             }
-        });
-    }
-
-    loadServeZip(url: string) {
-        if (url.indexOf(".zip") == -1) {
-            this.loadServeModel(url);
-            return;
-        }
-
-        var fineLoader = new FineLoader();
-        fineLoader.start(url, (object3D: THREE.Object3D) => {
-            Tooler.resize(object3D, 20);
-            this.root.addObject(object3D);
         });
     }
 }
